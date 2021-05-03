@@ -13,8 +13,15 @@ import java.io.*;
 public class DiagonalDifference {
 
     public static int diagonalDifference(List<List<Integer>> arr) {
-        System.out.println(arr.get(1));
-        return 0;
+        int arrayLength = arr.size();
+        int leftDiagonal=0,rightDiagonal=0;
+        int DiagonalDiff=0;
+
+        for(int i=0; i< arrayLength; i++){
+                leftDiagonal+=arr.get(i).get(i);
+                rightDiagonal+=arr.get(i).get(arrayLength-1-i);
+        }
+        return Math.abs(leftDiagonal-rightDiagonal);
     }
 
     public static void main(String[] args) throws IOException {

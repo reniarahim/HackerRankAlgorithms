@@ -10,16 +10,7 @@ import java.io.*;
         import static java.util.stream.Collectors.joining;
         import static java.util.stream.Collectors.toList;
 
-class Result {
-
-    /*
-     * Complete the 'compareTriplets' function below.
-     *
-     * The function is expected to return an INTEGER_ARRAY.
-     * The function accepts following parameters:
-     *  1. INTEGER_ARRAY a
-     *  2. INTEGER_ARRAY b
-     */
+public class comparetriplets {
 
     public static List<Integer> compareTriplets(List<Integer> a, List<Integer> b) {
         // Write your code here
@@ -29,12 +20,12 @@ class Result {
             int aliceScore=a.get(i);
             int bobScore=b.get(i);
 
-        //    if(aliceScore > bobScore){
-        //        aliceTotalScore++;
-        //    }
-        //    else if (bobScore > aliceScore){
-        //        bobTotalScore++;
-         //   }
+            //    if(aliceScore > bobScore){
+            //        aliceTotalScore++;
+            //    }
+            //    else if (bobScore > aliceScore){
+            //        bobTotalScore++;
+            //   }
             if (aliceScore!=bobScore) {
                 int temp = aliceScore > bobScore ? aliceTotalScore++ : bobTotalScore++;
             }
@@ -46,9 +37,6 @@ class Result {
         return totalScore;
     }
 
-}
-
-public class comparetriplets {
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         //BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
@@ -61,7 +49,7 @@ public class comparetriplets {
                 .map(Integer::parseInt)
                 .collect(toList());
 
-        List<Integer> result = Result.compareTriplets(a, b);
+        List<Integer> result = compareTriplets(a, b);
 
         //bufferedWriter.write(
         //        result.stream()
